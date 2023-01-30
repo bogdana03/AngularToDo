@@ -1,0 +1,31 @@
+
+.addcard {
+    background-color:white; 
+    width:20em; 
+    height: 14vh;
+    margin-bottom: 1.2em;
+    margin-left: 7em;
+    border-radius: 5px;
+}
+
+.addcart-container {
+    background-color:#2f353a; 
+    height:25hv;
+}
+
+.box-list {
+    background-color:#00b0b9;
+}
+
+.input-holder {
+    margin-top: 1.2em;
+}
+
+.my-mat-form-field {
+    width: 80%;
+    margin-top: 1em;
+    margin-left: 0.5em;
+    border-radius: 4%;
+  
+}
+
