@@ -14,6 +14,8 @@ export class TodoComponent implements OnInit {
   tasks : ITask [] = [];
   inprogress : ITask [] = [];
   done : ITask [] = [];
+  updateIndex!:any;
+  isEditEnabled :boolean = false;
   constructor(private fb : FormBuilder) {}
 
   //form to create to do items
@@ -23,12 +25,48 @@ export class TodoComponent implements OnInit {
 
     })
   }
+
+  // method to add new task from the form to the lists
   addTask(){
     this.tasks.push({
       description:this.todoForm.value.item,
       done:false
     })
+    this.todoForm.reset();
   }
+
+  deleteTask(i: number){
+    this.tasks.splice(i,1)
+
+  }
+
+  //method for delete items from inprogress
+  deleteInProgressTask(i: number){
+    this.inprogress.splice(i,1)
+
+  }
+
+  //method for delete items fron done
+   deleteCopyTask(i: number){
+    this.done.splice(i,1)
+
+  }
+
+  onEdit(item:ITask, i : number){
+     this.todoForm.controls['item'].setValue(item.description);
+     this.updateIndex = i;
+     this.isEditEnabled = true;
+  }
+
+  updateTask(){
+    this.tasks[this.updateIndex].description = this.todoForm.value.item;
+    this.tasks[this.updateIndex].done = false;
+    this.todoForm.reset();
+    this.updateIndex = undefined;
+    this.isEditEnabled = false;
+  }
+  
+  //method for drop items to lists
   drop(event: CdkDragDrop<ITask[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
