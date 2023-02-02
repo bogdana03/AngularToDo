@@ -1,19 +1,19 @@
 <div class="container-fluid">
   <!--Created container first row for add item-->
-  <div class="row addcart-container align-items-center">
-    <div class="col-sm-4">
+  <div class="row addcart-container ">
+    <div class="col-md-12">
       <!--Created Card for adding item-->
 
       <div class="addcard">
         <mat-card class="mt-4">
           <form [formGroup]="todoForm">
             <mat-form-field class="my-mat-form-field" appearance="outline">
-              <mat-label>Task Name</mat-label>
+              <mat-label style="font-size: 12px; font-weight: lighter;">Task Name</mat-label>
               <input formControlName="item" class="input-holder" matInput placeholder="Placeholder" />
-              <mat-hint>Add task name</mat-hint>
+              <mat-hint style="font-size: 12px; font-weight:200;">Add task name</mat-hint>
             </mat-form-field>
-            <button mat-button *ngIf="!isEditEnabled"(click)="addTask()" class="mat-raised-button" [disabled]="todoForm.invalid">Add</button>
-            <button mat-button *ngIf="isEditEnabled"(click)="updateTask()" class="mat-raised-button" [disabled]="todoForm.invalid">Update</button>
+            <button mat-button *ngIf="!isEditEnabled"(click)="addTask()" class="mat-raised-button" [disabled]="todoForm.invalid" style="color: white;">Add</button>
+            <button mat-button *ngIf="isEditEnabled"(click)="updateTask()" class="mat-raised-button" [disabled]="todoForm.invalid" style="color: white;">Update</button>
           </form>
           
         </mat-card>
@@ -27,13 +27,13 @@
         <div class="col-md-4 d-flex justify-content-center">
           <!--To do-->
           <div class="example-container">
-            <h2>TO DO <span *ngIf="tasks.length > 0" > - {{tasks.length}}</span></h2>
+            <h2 class="box-header">TO DO <span *ngIf="tasks.length > 0" > - {{tasks.length}}</span></h2>
             <div cdkDropList [cdkDropListData]="tasks" class="example-list" (cdkDropListDropped)="drop($event)">
-              <div class="example-box" *ngFor="let item of tasks let i = index" cdkDrag>
+              <div ondrop="saveSesionTasks()" class="example-box" *ngFor="let item of tasks let i = index" cdkDrag>
                 {{item.description}}
                 <div class="box">
                   <button class="delete-button" (click)="deleteTask(i)"><mat-icon>delete</mat-icon></button>
-                  <button class="edit-button" (click)="onEdit(item,i)" ><mat-icon>edit</mat-icon></button>
+                  <button class="edit-button" (click)="onEdit(item,i)"><mat-icon>edit</mat-icon></button>
                 </div>
               </div>
             </div>
@@ -42,7 +42,7 @@
         <div class="col-md-4 d-flex justify-content-center">
           <!--in progres-->
           <div class="example-container">
-            <h2>IN PROGRESS <span *ngIf="inprogress.length > 0" > - {{inprogress.length}}</span></h2>
+            <h2 class="box-header">IN PROGRESS <span *ngIf="inprogress.length > 0" > - {{inprogress.length}}</span></h2>
             <div cdkDropList [cdkDropListData]="inprogress" class="example-list" (cdkDropListDropped)="drop($event)">
               <div class="example-box" *ngFor="let item of inprogress; let i = index" cdkDrag>
                 {{item.description}}
@@ -54,12 +54,12 @@
         <div class="col-md-4 d-flex justify-content-center">
           <!-- done -->
           <div class="example-container">
-            <h2>DONE <span *ngIf="done.length > 0" > - {{done.length}}</span></h2>
+            <h2 class="box-header">DONE <span *ngIf="done.length > 0" > - {{done.length}}</span></h2>
             <div cdkDropList [cdkDropListData]="done" class="example-list" (cdkDropListDropped)="drop($event)">
               <div class="example-box" *ngFor="let item of done; let i = index" cdkDrag>{{item.description}}
                 <div class="box">
                   <button class="delete-button" (click)="deleteTask(i)"><mat-icon>delete</mat-icon></button>
-                  <button class="edit-button"><mat-icon>check_circle</mat-icon></button>
+                  <button class="check-button"><mat-icon>check_circle</mat-icon></button>
                 </div>
               </div>
             </div>

@@ -17,13 +17,14 @@ export class TodoComponent implements OnInit {
   updateIndex!:any;
   isEditEnabled :boolean = false;
   constructor(private fb : FormBuilder) {}
-
+   session: any;
   //form to create to do items
   ngOnInit(): void {
     this.todoForm = this.fb.group({
       item : ['', Validators.required]
 
     })
+    
   }
 
   // method to add new task from the form to the lists
@@ -31,25 +32,33 @@ export class TodoComponent implements OnInit {
     this.tasks.push({
       description:this.todoForm.value.item,
       done:false
+      
     })
+    
+    localStorage.setItem("item", JSON.stringify(this.tasks));
     this.todoForm.reset();
   }
 
-  deleteTask(i: number){
-    this.tasks.splice(i,1)
+  saveSesionTasks(){
+    localStorage.setItem("tasks", JSON.stringify(this.tasks));
+  }
 
+  deleteTask(i: number){
+    this.tasks.splice(i,1);
+    localStorage.removeItem("item");
+    this.todoForm.reset();
   }
 
   //method for delete items from inprogress
   deleteInProgressTask(i: number){
-    this.inprogress.splice(i,1)
-
+    this.inprogress.splice(i,1);
+    localStorage.removeItem("item");
   }
 
-  //method for delete items fron done
+  //method for delete items from done
    deleteCopyTask(i: number){
     this.done.splice(i,1)
-
+    localStorage.removeItem("item");
   }
 
   onEdit(item:ITask, i : number){

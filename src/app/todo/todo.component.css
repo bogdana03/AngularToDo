@@ -1,10 +1,10 @@
 
 .addcard {
     background-color:white; 
-    width:20em; 
-    height: 14vh;
+    width:17em; 
+    height: 13vh;
     margin-bottom: 1.2em;
-    margin-left: 7em;
+    margin-left: 5.5em;
     border-radius: 5px;
 }
 
@@ -52,10 +52,25 @@
   background-color: white;
 }
 
-.box{
+.box {
   display: grid;
   grid-auto-flow: column;
   grid-column-gap: 10px;
+}
+
+.check-button {
+    color: #4dbd74;
+    border: none;
+    background-color: white;
+}
+
+.box-header {
+  font-size: 13px;
+  color: white;
+  background-color:#00b0b9;
+  text-align: center;
+  margin-bottom: 0;
+  padding: 5px;
 }
 
 .example-container {
