@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms'
 import { ITask } from '../model/task';
 
+
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
@@ -39,8 +40,8 @@ export class TodoComponent implements OnInit {
     this.todoForm.reset();
   }
 
-  saveSesionTasks(){
-    localStorage.setItem("tasks", JSON.stringify(this.tasks));
+  saveTaskFromBrowser(){
+    window.localStorage.getItem("item");
   }
 
   deleteTask(i: number){
