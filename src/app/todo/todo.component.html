@@ -9,11 +9,11 @@
           <form [formGroup]="todoForm">
             <mat-form-field class="my-mat-form-field" appearance="outline">
               <mat-label style="font-size: 12px; font-weight: lighter;">Story Name</mat-label>
-              <input formControlName="item" class="input-holder" matInput placeholder="Placeholder" />
+              <input formControlName="item" class="input-holder" matInput placeholder="....." />
               <mat-hint style="font-size: 12px; font-weight:200;"></mat-hint>
             </mat-form-field>
             <button mat-button *ngIf="!isEditEnabled"(click)="addTask()" class="m-button" [disabled]="todoForm.invalid" style="color: white;">Add</button>
-            <button mat-button *ngIf="isEditEnabled"(click)="updateTask()" class="mat-raised-button" [disabled]="todoForm.invalid" style="color: white;">Update</button>
+            <button mat-button *ngIf="isEditEnabled"(click)="updateTask()" class="m-button" [disabled]="todoForm.invalid" style="color: white;">Update</button>
           </form>
           
         </mat-card>
@@ -28,7 +28,7 @@
           <!--To do-->
           <div class="example-container">
             <h2 class="box-header">STORY STARTED <span *ngIf="tasks.length > 0" > - {{tasks.length}}</span></h2>
-            <div cdkDropList [cdkDropListData]="tasks" class="example-list" (cdkDropListDropped)="drop($event)">
+            <div  cdkDropList [cdkDropListData]="tasks" class="example-list" (cdkDropListDropped)="drop($event)">
               <div class="example-box" *ngFor="let item of tasks let i = index" cdkDrag>
                 {{item.description}}
                 <div class="box">

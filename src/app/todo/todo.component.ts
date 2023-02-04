@@ -25,7 +25,8 @@ export class TodoComponent implements OnInit {
       item : ['', Validators.required]
 
     })
-    
+      window.localStorage.getItem("item");
+     
   }
 
   // method to add new task from the form to the lists
@@ -40,8 +41,8 @@ export class TodoComponent implements OnInit {
     this.todoForm.reset();
   }
 
-  saveTaskFromBrowser(){
-    this.session=window.localStorage.getItem("item");
+  saveTaskFromBrowser(i: number){
+    window.localStorage.getItem("item");
   }
 
   deleteTask(i: number){
