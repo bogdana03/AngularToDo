@@ -41,7 +41,7 @@ export class TodoComponent implements OnInit {
   }
 
   saveTaskFromBrowser(){
-    window.localStorage.getItem("item");
+    this.session=window.localStorage.getItem("item");
   }
 
   deleteTask(i: number){

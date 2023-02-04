@@ -1,10 +1,10 @@
 
 .addcard {
     background-color:white; 
-    width: 18em; 
-    height: 7.5em;
+    width: 23em; 
+    height: 5em;
     margin-bottom: 1.2em;
-    margin-left: 5.5em;
+    margin-left: 0.4em;
     border-radius: 5px;
 }
 
@@ -22,20 +22,20 @@
 }
 
 .my-mat-form-field {
-    width: 80%;
+    width: 70%;
     margin-top: 1em;
     margin-left: 0.5em;
     border-radius: 4%;
     font-size: medium;
 }
 
-.mat-raised-button{
+.m-button {
   background-color: #00b0b9; 
   color: aliceblue; 
   height: 25px;
-  margin-left: 10px;
-  margin-right: 10px;
   border: none;
+  margin-left: 15px;
+  margin-bottom: 15px;
   border-radius: 5px;
   font-size: small;
 }
