@@ -1,4 +1,2 @@
 /* You can add global styles to this file, and also import other style files */
-body {
-background: -webkit-gradient(linear, left top, left bottom, from(rgba(83, 83, 83, 0.936)), to(#666666)) fixed;
-} 
+html, body {height: 100%; background-color:#2f353a;} 

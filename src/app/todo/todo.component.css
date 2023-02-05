@@ -1,15 +1,15 @@
 
 .addcard {
     background-color:white; 
-    width: 24rem; 
-    height: 4.7rem;
+    width: 23em; 
+    height: 5em;
     margin-bottom: 1.2em;
+    margin-left: 0.4em;
     border-radius: 5px;
-  
 }
 
 .addcart-container {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(83, 83, 83, 0.936)), to(#666666)) fixed;
+    background-color:#2f353a; 
     height:25hv;
 
 }
@@ -67,7 +67,6 @@
 
 .box-header {
   font-size: 13px;
-  font-family: "Helvetica Neue";
   color: white;
   background-color:#00b0b9;
   text-align: center;
@@ -128,25 +127,4 @@
 
 .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-}
-
-.example-box-4 {
-    height: 60vh;
-    background-color: white;
-    border-radius: 4px;
-}
-
-footer {
-  background-color: #00b0b9;
-  width: 100%;
-  height: 10vh;
-}
-
-p {
-  font-size: 10px;
-  text-align: end;
-}
-
-span {
-  font-size: 13px;
 }

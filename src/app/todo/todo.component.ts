@@ -25,26 +25,24 @@ export class TodoComponent implements OnInit {
       item : ['', Validators.required]
 
     })
+      window.localStorage.getItem("item");
      
   }
 
   // method to add new task from the form to the lists
   addTask(){
     this.tasks.push({
-      description: this.todoForm.value.item,
+      description:this.todoForm.value.item,
       done:false
+      
     })
     
-     localStorage.setItem("item", JSON.stringify(this.tasks));
-     
-    
+    localStorage.setItem("item", JSON.stringify(this.tasks));
     this.todoForm.reset();
   }
 
   saveTaskFromBrowser(i: number){
-    let data: any = localStorage.getItem("item");
-    this.session = JSON.parse(data);
-
+    window.localStorage.getItem("item");
   }
 
   deleteTask(i: number){
