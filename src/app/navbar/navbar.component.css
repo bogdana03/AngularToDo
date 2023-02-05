@@ -3,8 +3,11 @@
     color: rgb(228, 227, 227);
     height: 10vh;
     text-align: center;
+    width: 100%;
 }
 span {
     margin-left: 15px;
+    font-family: "Helvetica Neue";
+    font-size: 20px;
    
 }

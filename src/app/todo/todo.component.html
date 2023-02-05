@@ -1,11 +1,11 @@
 <div class="container-fluid">
   <!--Created container first row for add item-->
-  <div class="row addcart-container ">
-    <div class="col-md-12">
+  <div class="row addcard-container ">
+    
       <!--Created Card for adding item-->
 
-      <div class="addcard">
-        <mat-card class="mt-4">
+      <div class="col-md-3 d-flex justify-content-center mt-3">
+        <mat-card class="addcard">
           <form [formGroup]="todoForm">
             <mat-form-field class="my-mat-form-field" appearance="outline">
               <mat-label style="font-size: 12px; font-weight: lighter;">Story Name</mat-label>
@@ -18,13 +18,13 @@
           
         </mat-card>
       </div>
-    </div>
+    
   </div>
   <!-- creating containers for list-->
   <div class="col-md-12">
     <div cdkDropListGroup>
       <div class="row">
-        <div class="col-md-4 d-flex justify-content-center">
+        <div class="col-md-3 d-flex justify-content-center">
           <!--To do-->
           <div class="example-container">
             <h2 class="box-header">STORY STARTED <span *ngIf="tasks.length > 0" > - {{tasks.length}}</span></h2>
@@ -39,7 +39,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 d-flex justify-content-center">
+        <div class="col-md-3 d-flex justify-content-center">
           <!--in progres-->
           <div class="example-container">
             <h2 class="box-header">STORY IN PROGRESS <span *ngIf="inprogress.length > 0" > - {{inprogress.length}}</span></h2>
@@ -51,7 +51,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 d-flex justify-content-center">
+        <div class="col-md-3 d-flex justify-content-center">
           <!-- done -->
           <div class="example-container">
             <h2 class="box-header"> STORY DONE <span *ngIf="done.length > 0" > - {{done.length}}</span></h2>
@@ -65,7 +65,30 @@
             </div>
           </div>
         </div>
+        <div class="col-md-3 d-flex justify-content-center">
+          <!-- done -->
+          <div class="example-container">
+            <h2 class="box-header">ABOUT<span></span></h2>
+            <div class="example-box-4">
+              
+            </div>
+            
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+<footer class="footer fixed-bottom">
+    <div class="container fluid p-0">
+      <div class="row text-left mt-2">
+        <div class="col md-5 col-md-5">
+          <h6 class="text-light">About Us</h6>
+          <span class="text-muted">Lorem ipsum, dolor sit amet consectetur adipisicing.</span>
+        </div>   
+      </div> 
+    </div>
+     <div mb-5>
+       <p class="pt-4 text-muted ">Copyright© 2023 All right reserved | Made by BS</p>
+     </div>
+</footer>
