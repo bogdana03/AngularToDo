@@ -25,26 +25,30 @@ export class TodoComponent implements OnInit {
       item : ['', Validators.required]
 
     })
-      window.localStorage.getItem("item");
      
   }
 
   // method to add new task from the form to the lists
   addTask(){
     this.tasks.push({
-      description:this.todoForm.value.item,
+      description: this.todoForm.value.item,
       done:false
-      
     })
     
-    localStorage.setItem("item", JSON.stringify(this.tasks));
+     localStorage.setItem("item", JSON.stringify(this.tasks));
+     
+    
     this.todoForm.reset();
   }
 
+  //get locally saved items from the browser
   saveTaskFromBrowser(i: number){
-    window.localStorage.getItem("item");
+    let data: any = localStorage.getItem("item");
+    this.session = JSON.parse(data);
+
   }
 
+  //delete items from the task column
   deleteTask(i: number){
     this.tasks.splice(i,1);
     localStorage.removeItem("item");
@@ -63,12 +67,15 @@ export class TodoComponent implements OnInit {
     localStorage.removeItem("item");
   }
 
+
+  //method to update tasc from the add task form
   onEdit(item:ITask, i : number){
      this.todoForm.controls['item'].setValue(item.description);
      this.updateIndex = i;
      this.isEditEnabled = true;
   }
 
+  //update tasks
   updateTask(){
     this.tasks[this.updateIndex].description = this.todoForm.value.item;
     this.tasks[this.updateIndex].done = false;

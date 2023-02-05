@@ -1,13 +1,13 @@
 <div class="container-fluid">
   <!--Created container first row for add item-->
-  <div class="row addcart-container ">
-    <div class="col-md-12">
+  <div class="row addcard-container ">
+    
       <!--Created Card for adding item-->
 
-      <div class="addcard">
-        <mat-card class="mt-4">
+      <div class="col-md-3 d-flex justify-content-start mt-3">
+        <mat-card class="addcard">
           <form [formGroup]="todoForm">
-            <mat-form-field class="my-mat-form-field" appearance="outline">
+            <mat-form-field class="my-mat-form-field col-md-3 " appearance="outline">
               <mat-label style="font-size: 12px; font-weight: lighter;">Story Name</mat-label>
               <input formControlName="item" class="input-holder" matInput placeholder="....." />
               <mat-hint style="font-size: 12px; font-weight:200;"></mat-hint>
@@ -18,16 +18,16 @@
           
         </mat-card>
       </div>
-    </div>
+    
   </div>
   <!-- creating containers for list-->
   <div class="col-md-12">
     <div cdkDropListGroup>
       <div class="row">
-        <div class="col-md-4 d-flex justify-content-center">
+        <div class="col-md-3 d-flex justify-content-center">
           <!--To do-->
           <div class="example-container">
-            <h2 class="box-header">STORY STARTED <span *ngIf="tasks.length > 0" > - {{tasks.length}}</span></h2>
+            <h2 class="box-header">ToDo STARTED <span *ngIf="tasks.length > 0" > - {{tasks.length}}</span></h2>
             <div  cdkDropList [cdkDropListData]="tasks" class="example-list" (cdkDropListDropped)="drop($event)">
               <div class="example-box" *ngFor="let item of tasks let i = index" cdkDrag>
                 {{item.description}}
@@ -39,10 +39,10 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 d-flex justify-content-center">
+        <div class="col-md-3 d-flex justify-content-center">
           <!--in progres-->
           <div class="example-container">
-            <h2 class="box-header">STORY IN PROGRESS <span *ngIf="inprogress.length > 0" > - {{inprogress.length}}</span></h2>
+            <h2 class="box-header">ToDo IN PROGRESS <span *ngIf="inprogress.length > 0" > - {{inprogress.length}}</span></h2>
             <div cdkDropList [cdkDropListData]="inprogress" class="example-list" (cdkDropListDropped)="drop($event)">
               <div class="example-box" *ngFor="let item of inprogress; let i = index" cdkDrag>
                 {{item.description}}
@@ -51,10 +51,10 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 d-flex justify-content-center">
+        <div class="col-md-3 d-flex justify-content-center">
           <!-- done -->
           <div class="example-container">
-            <h2 class="box-header"> STORY DONE <span *ngIf="done.length > 0" > - {{done.length}}</span></h2>
+            <h2 class="box-header">ToDo DONE <span *ngIf="done.length > 0" > - {{done.length}}</span></h2>
             <div cdkDropList [cdkDropListData]="done" class="example-list" (cdkDropListDropped)="drop($event)">
               <div class="example-box" *ngFor="let item of done; let i = index" cdkDrag>{{item.description}}
                 <div class="box">
@@ -65,7 +65,54 @@
             </div>
           </div>
         </div>
+        <div class="col-md-3 d-flex justify-content-center">
+          <!-- About  -->
+          <div class="example-container">
+            <h2 class="box-header">ABOUT<span></span></h2>
+            <div class="example-box-4 text-center">
+              <div>
+                <h1>Welcome</h1>
+              </div>
+              <div>
+                <h2>To My</h2>
+              </div>
+              <div>
+                <h4>ToDo</h4>
+              </div>
+              <div>
+                <h5>List</h5>
+              </div>
+            </div> 
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+<footer class="footer fixed-bottom">
+   <!-- Footer container--> 
+  <div class="container fluid p-0">
+    <div class="col-md-12">
+      <div class="row">
+        <!-- Left col-->
+        <div class="col-md-3 mt-3">
+          
+        </div>
+        <!--Middle col -->
+        <div class="md-5 col-md-3 mt-3">
+          <h6 class="text-light">Contact me:</h6>
+          <span class="text-muted">Lorem ipsum, dolor sit amet consectetur adipisicing.</span>
+          
+        </div>   
+        <!--Right column-->
+        <div class="md-5 col-md-3">
+          <p class="pt-4 text-muted ">Copyright© 2023 All right reserved | Made by BS</p>
+        </div>
+
+      </div>
+          
+    </div> 
+  </div>
+    
+      
+</footer>

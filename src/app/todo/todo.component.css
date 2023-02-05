@@ -1,27 +1,31 @@
-
+/*style  add form */
 .addcard {
     background-color:white; 
-    width: 23em; 
-    height: 5em;
+    width: 23rem; 
+    height: 4.7rem;
     margin-bottom: 1.2em;
-    margin-left: 0.4em;
     border-radius: 5px;
+    margin-left: 0.1rem;
 }
 
+/* */
 .addcart-container {
-    background-color:#2f353a; 
+    background-color: #2f353a;
     height:25hv;
 
 }
+
 
 .box-list {
     background-color:#00b0b9;
 }
 
+/*style ad task input holder card */
 .input-holder {
     margin-top: 1.2em;
 }
 
+/* style ad task input form*/
 .my-mat-form-field {
     width: 70%;
     margin-top: 1em;
@@ -59,14 +63,17 @@
   grid-column-gap: 10px;
 }
 
+/*style check buton from done column*/
 .check-button {
     color: #4dbd74;
     border: none;
     background-color: white;
 }
 
+/*style header of columns list*/
 .box-header {
   font-size: 13px;
+  font-family: "Helvetica Neue";
   color: white;
   background-color:#00b0b9;
   text-align: center;
@@ -74,6 +81,7 @@
   padding: 5px;
 }
 
+/*style column container */
 .example-container {
   width: 400px;
   max-width: 100%;
@@ -82,6 +90,7 @@
   vertical-align: top;
 }
 
+/*style column  list*/
 .example-list {
   border: solid 1px #ccc;
   min-height: 60px;
@@ -90,6 +99,7 @@
   overflow: hidden;
   display: block;
 }
+
 
 .example-box {
   padding: 20px 10px;
@@ -128,3 +138,27 @@
 .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
+
+.example-box-4 {
+    height: 60vh;
+    background-color: white;
+    border-radius: 4px;
+    padding-top: 75px; 
+    font-family: "Helvetica Neue";
+}
+
+footer {
+  background-color: #00b0b9;
+  width: 100%;
+  height: 10vh;
+}
+
+p {
+  font-size: 10px;
+  text-align: end;
+}
+
+span {
+  font-size: 13px;
+}
+
