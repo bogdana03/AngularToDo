@@ -1,27 +1,31 @@
-
+/*style  add form */
 .addcard {
     background-color:white; 
-    width: 24rem; 
+    width: 23rem; 
     height: 4.7rem;
     margin-bottom: 1.2em;
     border-radius: 5px;
-  
+    margin-left: 0.1rem;
 }
 
+/* */
 .addcart-container {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(83, 83, 83, 0.936)), to(#666666)) fixed;
+    background-color: #2f353a;
     height:25hv;
 
 }
+
 
 .box-list {
     background-color:#00b0b9;
 }
 
+/*style ad task input holder card */
 .input-holder {
     margin-top: 1.2em;
 }
 
+/* style ad task input form*/
 .my-mat-form-field {
     width: 70%;
     margin-top: 1em;
@@ -59,12 +63,14 @@
   grid-column-gap: 10px;
 }
 
+/*style check buton from done column*/
 .check-button {
     color: #4dbd74;
     border: none;
     background-color: white;
 }
 
+/*style header of columns list*/
 .box-header {
   font-size: 13px;
   font-family: "Helvetica Neue";
@@ -75,6 +81,7 @@
   padding: 5px;
 }
 
+/*style column container */
 .example-container {
   width: 400px;
   max-width: 100%;
@@ -83,6 +90,7 @@
   vertical-align: top;
 }
 
+/*style column  list*/
 .example-list {
   border: solid 1px #ccc;
   min-height: 60px;
@@ -91,6 +99,7 @@
   overflow: hidden;
   display: block;
 }
+
 
 .example-box {
   padding: 20px 10px;
@@ -134,6 +143,8 @@
     height: 60vh;
     background-color: white;
     border-radius: 4px;
+    padding-top: 75px; 
+    font-family: "Helvetica Neue";
 }
 
 footer {
@@ -150,3 +161,4 @@ p {
 span {
   font-size: 13px;
 }
+

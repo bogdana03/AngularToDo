@@ -41,12 +41,14 @@ export class TodoComponent implements OnInit {
     this.todoForm.reset();
   }
 
+  //get locally saved items from the browser
   saveTaskFromBrowser(i: number){
     let data: any = localStorage.getItem("item");
     this.session = JSON.parse(data);
 
   }
 
+  //delete items from the task column
   deleteTask(i: number){
     this.tasks.splice(i,1);
     localStorage.removeItem("item");
@@ -65,12 +67,15 @@ export class TodoComponent implements OnInit {
     localStorage.removeItem("item");
   }
 
+
+  //method to update tasc from the add task form
   onEdit(item:ITask, i : number){
      this.todoForm.controls['item'].setValue(item.description);
      this.updateIndex = i;
      this.isEditEnabled = true;
   }
 
+  //update tasks
   updateTask(){
     this.tasks[this.updateIndex].description = this.todoForm.value.item;
     this.tasks[this.updateIndex].done = false;
